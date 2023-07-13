@@ -6,7 +6,7 @@ public class Condition{
     private String text, icon;
     private int code;
 
-    // GETTERS AND SETTERS
+    // GETTERS
     public String getText() {
         return text;
     }

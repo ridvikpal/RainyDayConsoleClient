@@ -17,7 +17,7 @@ public class Current{
 
     private AirQuality air_quality;
 
-    // GETTERS AND SETTERS
+    // GETTERS
     public double getTemp_c() {
         return temp_c;
     }

@@ -12,7 +12,7 @@ public class Location{
 
     private int localtime_epoch;
 
-    // GETTERS AND SETTERS
+    // GETTERS
     public String getName() {
         return name;
     }

@@ -12,7 +12,7 @@ public class AirQuality{
     @SerializedName("gb-defra-index")
     private int gb_defra_index;
 
-    // GETTERS AND SETTERS
+    // GETTERS
     public double getCo() {
         return co;
     }

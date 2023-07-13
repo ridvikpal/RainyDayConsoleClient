@@ -5,7 +5,7 @@ public class Main {
         // create a connection object
         Connection connectionObject = new Connection();
 
-        // testing getWeather method
-        connectionObject.getCurrentWeather("toro-molise-italy", true);
+//        connectionObject.getCurrentWeather("toro-molise-italy", "yes");
+        connectionObject.getAstronomy("Toronto", "2023-07-13");
     }
 }
