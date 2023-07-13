@@ -5,38 +5,38 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.StringJoiner;
 
-public class WeatherObject {
-    private LocationObject location;
-    private CurrentObject current;
+public class Weather {
+    private Location location;
+    private Current current;
 
     // GETTERS AND SETTERS
-    public LocationObject getLocation() {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(LocationObject location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 
-    public CurrentObject getCurrent() {
+    public Current getCurrent() {
         return current;
     }
 
-    public void setCurrent(CurrentObject current) {
+    public void setCurrent(Current current) {
         this.current = current;
     }
 
     // toString method overloading
     @Override
     public String toString(){
-        return new StringJoiner("\n", "{\n", "\n}")
+        return new StringJoiner("\n", "", "")
                 .add("location: " + this.getLocation())
                 .add("current: " + this.getCurrent())
                 .toString();
     }
 }
 
-class LocationObject{
+class Location{
     private String name, region, country, tz_id, localtime;
 
     private double lat, lon;
@@ -123,7 +123,7 @@ class LocationObject{
     }
 }
 
-class CurrentObject{
+class Current{
 
     private double temp_c, temp_f, wind_mph, wind_kph, pressure_mb, pressure_in, feelslike_c, feelslike_f
             , vis_km, vis_miles, uv, precip_mm, precip_in, gust_mph, gust_kph;
@@ -132,9 +132,9 @@ class CurrentObject{
 
     private String last_updated, wind_dir;
 
-    private ConditionObject condition;
+    private Condition condition;
 
-    private AirQualityObject air_quality;
+    private AirQuality air_quality;
 
     // GETTERS AND SETTERS
     public double getTemp_c() {
@@ -313,19 +313,19 @@ class CurrentObject{
         this.wind_dir = wind_dir;
     }
 
-    public ConditionObject getCondition() {
+    public Condition getCondition() {
         return condition;
     }
 
-    public void setCondition(ConditionObject condition) {
+    public void setCondition(Condition condition) {
         this.condition = condition;
     }
 
-    public AirQualityObject getAir_quality() {
+    public AirQuality getAir_quality() {
         return air_quality;
     }
 
-    public void setAir_quality(AirQualityObject air_quality) {
+    public void setAir_quality(AirQuality air_quality) {
         this.air_quality = air_quality;
     }
 
@@ -364,7 +364,7 @@ class CurrentObject{
     }
 }
 
-class ConditionObject{
+class Condition{
     private String text, icon;
     private int code;
 
@@ -403,7 +403,7 @@ class ConditionObject{
     }
 }
 
-class AirQualityObject{
+class AirQuality{
     private double co, no2, o3, so2, pm2_5, pm10;
     @SerializedName("us-epa-index")
     private int us_epa_index;

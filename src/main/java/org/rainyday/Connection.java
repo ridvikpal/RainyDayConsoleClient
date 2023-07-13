@@ -37,8 +37,8 @@ public class Connection {
             // send the request to the server using the client
             HttpResponse<String> getResponse = client.send(getRequest, HttpResponse.BodyHandlers.ofString());
 
-            // capture the result from GSON and put it into a WeatherObject
-            WeatherObject result = new Gson().fromJson(getResponse.body(), WeatherObject.class);
+            // capture the result from GSON and put it into a Weather
+            Weather result = new Gson().fromJson(getResponse.body(), Weather.class);
 
             System.out.println(result);
         }catch (Exception e){
