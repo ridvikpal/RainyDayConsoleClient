@@ -1,5 +1,6 @@
 package org.rainyday;
 
+import java.util.Date;
 import java.util.StringJoiner;
 
 public class Current{
@@ -8,7 +9,9 @@ public class Current{
 
     private int is_day, last_updated_epoch, wind_degree, humidity, cloud;
 
-    private String last_updated, wind_dir;
+    private String wind_dir;
+
+    private Date last_updated;
 
     private Condition condition;
 
@@ -175,11 +178,11 @@ public class Current{
         this.cloud = cloud;
     }
 
-    public String getLast_updated() {
+    public Date getLast_updated() {
         return last_updated;
     }
 
-    public void setLast_updated(String last_updated) {
+    public void setLast_updated(Date last_updated) {
         this.last_updated = last_updated;
     }
 

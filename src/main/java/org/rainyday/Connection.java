@@ -39,7 +39,7 @@ public class Connection {
             HttpResponse<String> getResponse = client.send(getRequest, HttpResponse.BodyHandlers.ofString());
 
             // capture the result from GSON and put it into a Weather
-            Weather result = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create()
+            Weather result = new GsonBuilder().registerTypeAdapter(Date.class, new DateTimeDeserializer()).create()
                     .fromJson(getResponse.body(), Weather.class);
 
             System.out.println(result);
