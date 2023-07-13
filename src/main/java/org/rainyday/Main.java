@@ -2,10 +2,10 @@ package org.rainyday;
 
 public class Main {
     public static void main(String[] args){
-        // create a connection object
+        // create a connection object to establish connection with API
         Connection connectionObject = new Connection();
 
-//        connectionObject.getCurrentWeather("toro-molise-italy", "yes");
-        connectionObject.getAstronomy("Toronto", "2023-07-13");
+//        Weather test = connectionObject.getCurrentWeather("Jacksonville", "yes");
+        Weather test = connectionObject.getAstronomy("Toronto", "2023-07-13");
     }
 }

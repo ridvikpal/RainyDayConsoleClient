@@ -21,7 +21,7 @@ public class Connection {
 
     private final HttpClient client = HttpClient.newHttpClient();
 
-    public void getCurrentWeather(String _q, String _airQuality) {
+    Weather getCurrentWeather(String _q, String _airQuality) {
         // the url to get the information from
         String url = "https://api.weatherapi.com/v1/current.json?key=" + API_KEY
                 + "&q=" + _q + "&aqi=" + _airQuality;
@@ -29,47 +29,57 @@ public class Connection {
         // create a GET http request
         HttpRequest currentWeatherRequest = HttpRequest.newBuilder().uri(URI.create(url)).build();
 
+        // create the result of our http request
+        Weather result;
+
         try {
             // send the request to the server using the client
             HttpResponse<String> currentWeatherResponse = client.send(currentWeatherRequest,
                     HttpResponse.BodyHandlers.ofString());
 
             // capture the result from GSON and put it into a Weather
-            Weather result = new GsonBuilder().registerTypeAdapter(Date.class, new DateTimeDeserializer()).create()
+            result = new GsonBuilder().registerTypeAdapter(Date.class, new DateTimeDeserializer()).create()
                     .fromJson(currentWeatherResponse.body(), Weather.class);
-
-            System.out.println(result);
         }catch (Exception e){
             e.printStackTrace();
+
+            result = null;
         }
+
+        return result;
     }
 
-    public void getAstronomy(String _q, String _dt){
+    Weather getAstronomy(String _q, String _dt){
         String url = "https://api.weatherapi.com/v1/astronomy.json?key=" + API_KEY
                 + "&q=" + _q + "&dt=" + _dt;
 
         HttpRequest astronomyRequest = HttpRequest.newBuilder().uri(URI.create(url)).build();
 
+        Weather result;
+
         try {
-            // send the request to the server using the client
             HttpResponse<String> astronomyResponse = client.send(astronomyRequest,
                     HttpResponse.BodyHandlers.ofString());
 
-            // capture the result from GSON and put it into a Weather
-            Weather result = new GsonBuilder().registerTypeAdapter(Date.class, new DateTimeDeserializer()).create()
+            result = new GsonBuilder().registerTypeAdapter(Date.class, new DateTimeDeserializer()).create()
                     .fromJson(astronomyResponse.body(), Weather.class);
-
-            System.out.println(result);
         }catch (Exception e){
             e.printStackTrace();
+            result = null;
         }
+
+        return result;
     }
 
-    public void getForecast(String _q, int _days, boolean _airQuality){
+    Weather getForecast(String _q, int _days, boolean _airQuality){
+        Weather result = null;
 
+        return result;
     }
 
-    public void getAutocompleteTerm(){
+    Weather getAutocompleteTerm(){
+        Weather result = null;
 
+        return result;
     }
 }
