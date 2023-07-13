@@ -6,11 +6,13 @@ package org.rainyday;
 * */
 
 /* IMPORT LIBRARIES */
-import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Date;
 
 /* MAIN CLASS DECLARATION */
 public class Connection {
@@ -19,8 +21,7 @@ public class Connection {
 
     private final HttpClient client = HttpClient.newHttpClient();
 
-    public void getWeather(String _city, boolean _airQuality) {
-
+    public void getCurrentWeather(String _city, boolean _airQuality) {
         // determine if air quality is to be received in the request
         String airQualitySwitch;
         if (_airQuality) airQualitySwitch = "yes";
@@ -38,14 +39,24 @@ public class Connection {
             HttpResponse<String> getResponse = client.send(getRequest, HttpResponse.BodyHandlers.ofString());
 
             // capture the result from GSON and put it into a Weather
-            Weather result = new Gson().fromJson(getResponse.body(), Weather.class);
+            Weather result = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create()
+                    .fromJson(getResponse.body(), Weather.class);
 
             System.out.println(result);
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
 
+    public void getForecast(String _city, int _days, boolean _airQuality){
 
+    }
+
+    public void getAutocompleteTerm(){
+
+    }
+
+    public void getAstronomy(){
 
     }
 }

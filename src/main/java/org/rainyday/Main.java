@@ -6,6 +6,6 @@ public class Main {
         Connection connectionObject = new Connection();
 
         // testing getWeather method
-        connectionObject.getWeather("toro-molise-italy", true);
+        connectionObject.getCurrentWeather("toro-molise-italy", true);
     }
 }
