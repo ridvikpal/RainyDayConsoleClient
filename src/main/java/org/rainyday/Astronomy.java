@@ -1,4 +1,5 @@
 package org.rainyday;
 
-public class Astronomy {
+public class Astronomy{
+
 }
