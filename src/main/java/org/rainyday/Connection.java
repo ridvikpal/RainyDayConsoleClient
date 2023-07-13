@@ -31,8 +31,7 @@ public class Connection {
                 + "&q=" + _city + "&aqi=" + airQualitySwitch;
 
         // create a GET http request
-        HttpRequest getRequest = HttpRequest.newBuilder()
-                .uri(URI.create(url)).build();
+        HttpRequest getRequest = HttpRequest.newBuilder().uri(URI.create(url)).build();
 
         try {
             // send the request to the server using the client
@@ -41,7 +40,7 @@ public class Connection {
             // capture the result from GSON and put it into a WeatherObject
             WeatherObject result = new Gson().fromJson(getResponse.body(), WeatherObject.class);
 
-            System.out.println(result.getLocation().getCountry());
+            System.out.println(result);
         }catch (Exception e){
             e.printStackTrace();
         }

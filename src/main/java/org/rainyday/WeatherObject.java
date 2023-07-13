@@ -1,11 +1,15 @@
 package org.rainyday;
 
+/* IMPORT CLASSES */
 import com.google.gson.annotations.SerializedName;
+
+import java.util.StringJoiner;
 
 public class WeatherObject {
     private LocationObject location;
     private CurrentObject current;
 
+    // GETTERS AND SETTERS
     public LocationObject getLocation() {
         return location;
     }
@@ -21,6 +25,15 @@ public class WeatherObject {
     public void setCurrent(CurrentObject current) {
         this.current = current;
     }
+
+    // toString method overloading
+    @Override
+    public String toString(){
+        return new StringJoiner("\n", "{\n", "\n}")
+                .add("location: " + this.location)
+                .add("current: " + this.current)
+                .toString();
+    }
 }
 
 class LocationObject{
@@ -30,6 +43,7 @@ class LocationObject{
 
     private int localtime_epoch;
 
+    // GETTERS AND SETTERS
     public String getName() {
         return name;
     }
@@ -93,6 +107,20 @@ class LocationObject{
     public void setLocaltime_epoch(int localtime_epoch) {
         this.localtime_epoch = localtime_epoch;
     }
+
+    // toString method overloading
+    @Override
+    public String toString(){
+        return new StringJoiner("\n\t\t", "[\n\t\t", " \n\t\t]")
+                .add("name=" + this.name)
+                .add("region=" + this.region)
+                .add("country=" + this.country)
+                .add("lat=" + this.lat + ", lon=" + this.lon)
+                .add("tz_id=" + this.tz_id)
+                .add("localtime_epoch=" + this.localtime_epoch)
+                .add("localtime=" + this.localtime)
+                .toString();
+    }
 }
 
 class CurrentObject{
@@ -108,6 +136,7 @@ class CurrentObject{
 
     private AirQualityObject air_quality;
 
+    // GETTERS AND SETTERS
     public double getTemp_c() {
         return temp_c;
     }
@@ -299,12 +328,47 @@ class CurrentObject{
     public void setAir_quality(AirQualityObject air_quality) {
         this.air_quality = air_quality;
     }
+
+    // toString method overloading
+    public String toString(){
+        String part1 = new StringJoiner("\n\t\t", "[\n\t\t", "")
+                .add("temp_c=" + this.temp_c)
+                .add("temp_f=" + this.temp_f)
+                .add("wind_mph=" + this.wind_mph)
+                .add("wind_kph=" + this.wind_kph)
+                .add("feelslike_c=" + this.feelslike_c)
+                .add("feelslike_f=" + this.feelslike_f)
+                .add("pressure_mb=" + this.pressure_mb)
+                .add("pressure_in=" + this.pressure_in)
+                .add("vis_km=" + this.vis_km)
+                .add("vis_miles=" + this.vis_miles)
+                .add("precip_mm=" + this.precip_mm)
+                .add("precip_in=" + this.precip_in)
+                .add("gust_mph=" + this.gust_mph)
+                .add("gust_kph="+ this.gust_kph)
+                .add("is_day="+ this.gust_kph)
+                .add("last_updated_epoch="+ this.last_updated_epoch)
+                .add("wind_degree=" + this.wind_degree)
+                .add("humidity=" + this.humidity)
+                .add("cloud=" + this.cloud)
+                .add("last_updated=" + this.last_updated)
+                .add("wind_dir=" + this.wind_dir)
+                .toString();
+
+        String part2 = new StringJoiner("\n\t\t", "\t", "\n\t\t]")
+                .add("condition=" + this.condition)
+                .add("air_quality=" + this.air_quality)
+                .toString();
+
+        return part1 + "\n\t" + part2;
+    }
 }
 
 class ConditionObject{
     private String text, icon;
     private int code;
 
+    // GETTERS AND SETTERS
     public String getText() {
         return text;
     }
@@ -328,6 +392,15 @@ class ConditionObject{
     public void setCode(int code) {
         this.code = code;
     }
+
+    // toString method overloading
+    public String toString(){
+        return new StringJoiner("\n\t\t\t", "(\n\t\t\t", "\n\t\t\t)")
+                .add("text=" + this.text)
+                .add("icon=" + this.icon)
+                .add("code=" + this.code)
+                .toString();
+    }
 }
 
 class AirQualityObject{
@@ -338,6 +411,7 @@ class AirQualityObject{
     @SerializedName("gb-defra-index")
     private int gb_defra_index;
 
+    // GETTERS AND SETTERS
     public double getCo() {
         return co;
     }
@@ -400,5 +474,19 @@ class AirQualityObject{
 
     public void setGb_defra_index(int gb_defra_index) {
         this.gb_defra_index = gb_defra_index;
+    }
+
+    // toString method overloading
+    public String toString(){
+        return new StringJoiner("\n\t\t\t", "(\n\t\t\t", "\n\t\t\t)")
+                .add("co=" + this.co)
+                .add("no2=" + this.no2)
+                .add("o3=" + this.o3)
+                .add("so2=" + this.so2)
+                .add("pm2_5=" + this.pm2_5)
+                .add("pm10=" + this.pm10)
+                .add("us-epa-index=" + this.us_epa_index)
+                .add("gb-defra-index=" + this.gb_defra_index)
+                .toString();
     }
 }

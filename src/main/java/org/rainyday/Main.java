@@ -6,6 +6,6 @@ public class Main {
         Connection connectionObject = new Connection();
 
         // testing getWeather method
-        connectionObject.getWeather("Toronto", false);
+        connectionObject.getWeather("Toronto", true);
     }
 }
