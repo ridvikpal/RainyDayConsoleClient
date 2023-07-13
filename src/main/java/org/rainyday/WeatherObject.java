@@ -30,8 +30,8 @@ public class WeatherObject {
     @Override
     public String toString(){
         return new StringJoiner("\n", "{\n", "\n}")
-                .add("location: " + this.location)
-                .add("current: " + this.current)
+                .add("location: " + this.getLocation())
+                .add("current: " + this.getCurrent())
                 .toString();
     }
 }
@@ -112,13 +112,13 @@ class LocationObject{
     @Override
     public String toString(){
         return new StringJoiner("\n\t\t", "[\n\t\t", " \n\t\t]")
-                .add("name=" + this.name)
-                .add("region=" + this.region)
-                .add("country=" + this.country)
-                .add("lat=" + this.lat + ", lon=" + this.lon)
-                .add("tz_id=" + this.tz_id)
-                .add("localtime_epoch=" + this.localtime_epoch)
-                .add("localtime=" + this.localtime)
+                .add("name=" + this.getName())
+                .add("region=" + this.getRegion())
+                .add("country=" + this.getCountry())
+                .add("lat=" + this.getLat() + ", lon=" + this.getLon())
+                .add("tz_id=" + this.getTz_id())
+                .add("localtime_epoch=" + this.getLocaltime_epoch())
+                .add("localtime=" + this.getLocaltime())
                 .toString();
     }
 }
@@ -332,32 +332,32 @@ class CurrentObject{
     // toString method overloading
     public String toString(){
         String part1 = new StringJoiner("\n\t\t", "[\n\t\t", "")
-                .add("temp_c=" + this.temp_c)
-                .add("temp_f=" + this.temp_f)
-                .add("wind_mph=" + this.wind_mph)
-                .add("wind_kph=" + this.wind_kph)
-                .add("feelslike_c=" + this.feelslike_c)
-                .add("feelslike_f=" + this.feelslike_f)
-                .add("pressure_mb=" + this.pressure_mb)
-                .add("pressure_in=" + this.pressure_in)
-                .add("vis_km=" + this.vis_km)
-                .add("vis_miles=" + this.vis_miles)
-                .add("precip_mm=" + this.precip_mm)
-                .add("precip_in=" + this.precip_in)
-                .add("gust_mph=" + this.gust_mph)
-                .add("gust_kph="+ this.gust_kph)
-                .add("is_day="+ this.gust_kph)
-                .add("last_updated_epoch="+ this.last_updated_epoch)
-                .add("wind_degree=" + this.wind_degree)
-                .add("humidity=" + this.humidity)
-                .add("cloud=" + this.cloud)
-                .add("last_updated=" + this.last_updated)
-                .add("wind_dir=" + this.wind_dir)
+                .add("temp_c=" + this.getTemp_c())
+                .add("temp_f=" + this.getTemp_f())
+                .add("wind_mph=" + this.getWind_mph())
+                .add("wind_kph=" + this.getWind_kph())
+                .add("feelslike_c=" + this.getFeelslike_c())
+                .add("feelslike_f=" + this.getFeelslike_f())
+                .add("pressure_mb=" + this.getPressure_mb())
+                .add("pressure_in=" + this.getPressure_in())
+                .add("vis_km=" + this.getVis_km())
+                .add("vis_miles=" + this.getVis_miles())
+                .add("precip_mm=" + this.getPrecip_mm())
+                .add("precip_in=" + this.getPrecip_in())
+                .add("gust_mph=" + this.getGust_mph())
+                .add("gust_kph="+ this.getGust_kph())
+                .add("is_day="+ this.getIs_day())
+                .add("last_updated_epoch="+ this.getLast_updated_epoch())
+                .add("last_updated=" + this.getLast_updated())
+                .add("wind_degree=" + this.getWind_degree())
+                .add("humidity=" + this.getHumidity())
+                .add("cloud=" + this.getCloud())
+                .add("wind_dir=" + this.getWind_dir())
                 .toString();
 
         String part2 = new StringJoiner("\n\t\t", "\t", "\n\t\t]")
-                .add("condition=" + this.condition)
-                .add("air_quality=" + this.air_quality)
+                .add("condition=" + this.getCondition())
+                .add("air_quality=" + this.getAir_quality())
                 .toString();
 
         return part1 + "\n\t" + part2;
@@ -396,9 +396,9 @@ class ConditionObject{
     // toString method overloading
     public String toString(){
         return new StringJoiner("\n\t\t\t", "(\n\t\t\t", "\n\t\t\t)")
-                .add("text=" + this.text)
-                .add("icon=" + this.icon)
-                .add("code=" + this.code)
+                .add("text=" + this.getText())
+                .add("icon=" + this.getIcon())
+                .add("code=" + this.getCode())
                 .toString();
     }
 }
@@ -479,14 +479,14 @@ class AirQualityObject{
     // toString method overloading
     public String toString(){
         return new StringJoiner("\n\t\t\t", "(\n\t\t\t", "\n\t\t\t)")
-                .add("co=" + this.co)
-                .add("no2=" + this.no2)
-                .add("o3=" + this.o3)
-                .add("so2=" + this.so2)
-                .add("pm2_5=" + this.pm2_5)
-                .add("pm10=" + this.pm10)
-                .add("us-epa-index=" + this.us_epa_index)
-                .add("gb-defra-index=" + this.gb_defra_index)
+                .add("co=" + this.getCo())
+                .add("no2=" + this.getNo2())
+                .add("o3=" + this.getO3())
+                .add("so2=" + this.getSo2())
+                .add("pm2_5=" + this.getPm2_5())
+                .add("pm10=" + this.getPm10())
+                .add("us-epa-index=" + this.getUs_epa_index())
+                .add("gb-defra-index=" + this.getGb_defra_index())
                 .toString();
     }
 }
