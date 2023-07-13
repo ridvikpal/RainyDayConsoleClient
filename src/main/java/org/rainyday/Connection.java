@@ -71,9 +71,24 @@ public class Connection {
         return result;
     }
 
-    Weather getForecast(String _q, int _days, boolean _airQuality){
-        Weather result = null;
+    Weather getForecast(String _q, int _days, String _aqi, String _alerts){
+        String url = "https://api.weatherapi.com/v1/forecast.json?key=" + API_KEY
+                + "&q=" + _q + "&days=" + _days + "&aqi=" + _aqi + "&alerts=" + _alerts;
 
+        HttpRequest forecastRequest = HttpRequest.newBuilder().uri(URI.create(url)).build();
+
+        Weather result;
+
+        try {
+            HttpResponse<String> forecastResponse = client.send(forecastRequest,
+                    HttpResponse.BodyHandlers.ofString());
+
+            result = new GsonBuilder().registerTypeAdapter(Date.class, new DateTimeDeserializer()).create()
+                    .fromJson(forecastResponse.body(), Weather.class);
+        }catch (Exception e){
+            e.printStackTrace();
+            result = null;
+        }
         return result;
     }
 

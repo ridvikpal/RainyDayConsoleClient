@@ -4,7 +4,7 @@ import java.util.StringJoiner;
 
 public class Astronomy{
     private AstroSubClass astro;
-    static class AstroSubClass{
+    static private class AstroSubClass{
         private String sunrise, sunset, moonrise, moonset;
         private String  moon_phase;
         private int moon_illumination, is_moon_up, is_sun_up;

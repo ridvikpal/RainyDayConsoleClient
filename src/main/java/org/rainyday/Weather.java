@@ -2,8 +2,6 @@ package org.rainyday;
 
 /* IMPORT CLASSES */
 
-import com.google.gson.annotations.SerializedName;
-
 import java.util.StringJoiner;
 
 public class Weather {
@@ -11,6 +9,8 @@ public class Weather {
     private Current current;
 //    @SerializedName("astro")
     private Astronomy astronomy;
+
+    private Alert alerts;
 
     // GETTERS
     public Location getLocation() {
@@ -25,6 +25,10 @@ public class Weather {
         return astronomy;
     }
 
+    public Alert getAlerts() {
+        return alerts;
+    }
+
     // toString method overloading
     @Override
     public String toString(){
@@ -32,6 +36,7 @@ public class Weather {
                 .add("location: " + this.getLocation())
                 .add("current: " + this.getCurrent())
                 .add("astronomy: " + this.getAstronomy())
+                .add("alerts: " + this.getAlerts())
                 .toString();
     }
 }
