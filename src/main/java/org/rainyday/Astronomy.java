@@ -8,11 +8,4 @@ public class Astronomy{
     public Astro getAstro() {
         return astro;
     }
-
-    @Override
-    public String toString(){
-        return new StringJoiner("\n\t\t", "[\n\t\t", " \n\t\t]")
-            .add("astro=" + this.getAstro())
-            .toString();
-    }
 }

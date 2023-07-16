@@ -27,15 +27,4 @@ public class Weather {
     public Alert getAlerts() {
         return alerts;
     }
-
-    // toString method overloading
-    @Override
-    public String toString(){
-        return new StringJoiner("\n", "", "")
-                .add("location: " + this.getLocation())
-                .add("current: " + this.getCurrent())
-                .add("astronomy: " + this.getAstronomy())
-                .add("alerts: " + this.getAlerts())
-                .toString();
-    }
 }

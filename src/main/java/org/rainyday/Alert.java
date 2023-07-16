@@ -60,35 +60,5 @@ public class Alert {
         public String getInstruction() {
             return instruction;
         }
-
-        @Override
-        public String toString(){
-            return new StringJoiner("\n\t\t\t", "(\n\t\t\t", "\n\t\t\t)")
-                    .add("headline=" + this.getHeadline())
-                    .add("msgtype=" + this.getMsgtype())
-                    .add("severity=" + this.getSeverity())
-                    .add("urgency=" + this.getUrgency())
-                    .add("areas=" + this.getAreas())
-                    .add("category=" + this.getCategory())
-                    .add("certainty=" + this.getCertainty())
-                    .add("event=" + this.getEvent())
-                    .add("note=" + this.getNote())
-                    .add("effective=" + this.getEffective())
-                    .add("expires=" + this.getExpires())
-                    .add("desc=" + this.getExpires())
-                    .add("instruction=" + this.getInstruction())
-                    .toString();
-        }
-    }
-
-    @Override
-    public String toString(){
-        String result = null;
-        for (AlertSubClass x : alert){
-            result += new StringJoiner("\n\t\t", "[\n\t\t", " \n\t\t]")
-                .add("alert=" + x)
-                .toString();
-        }
-        return result;
     }
 }

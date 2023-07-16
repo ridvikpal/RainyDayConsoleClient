@@ -38,18 +38,4 @@ public class Astro {
     public int getIs_sun_up() {
         return is_sun_up;
     }
-
-    @Override
-    public String toString(){
-        return new StringJoiner("\n\t\t\t", "(\n\t\t\t", "\n\t\t\t)")
-                .add("sunrise=" + this.getSunrise())
-                .add("sunset=" + this.getSunset())
-                .add("moonrise=" + this.getMoonrise())
-                .add("moonset=" + this.getMoonset())
-                .add("moon_phase=" + this.getMoon_phase())
-                .add("moon_illumination=" + this.getMoon_illumination())
-                .add("is_moon_up=" + this.getIs_moon_up())
-                .add("is_sun_up=" + this.getIs_sun_up())
-                .toString();
-    }
 }

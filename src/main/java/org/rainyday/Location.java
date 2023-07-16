@@ -45,17 +45,4 @@ public class Location{
         return localtime_epoch;
     }
 
-    // toString method overloading
-    @Override
-    public String toString(){
-        return new StringJoiner("\n\t\t", "[\n\t\t", " \n\t\t]")
-                .add("name=" + this.getName())
-                .add("region=" + this.getRegion())
-                .add("country=" + this.getCountry())
-                .add("lat=" + this.getLat() + ", lon=" + this.getLon())
-                .add("tz_id=" + this.getTz_id())
-                .add("localtime_epoch=" + this.getLocaltime_epoch())
-                .add("localtime=" + this.getLocaltime())
-                .toString();
-    }
 }
