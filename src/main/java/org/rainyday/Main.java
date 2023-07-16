@@ -9,6 +9,6 @@ public class Main {
 //        Weather test = connectionObject.getAstronomy("Toronto", "2023-07-13");
         Weather test = connectionObject.getForecast("Toronto", 1, "no", "yes");
 
-        System.out.println(test);
+        System.out.println("Done");
     }
 }

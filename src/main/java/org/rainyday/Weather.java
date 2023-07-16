@@ -7,9 +7,8 @@ import java.util.StringJoiner;
 public class Weather {
     private Location location;
     private Current current;
-//    @SerializedName("astro")
+    private Forecast forecast;
     private Astronomy astronomy;
-
     private Alert alerts;
 
     // GETTERS
