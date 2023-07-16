@@ -8,7 +8,7 @@ public class Forecast {
     static private class ForecastSubClass{
         private String date;
         private int date_epoch;
-        private Astronomy astro;
+        private Astro astro;
         private Day day;
 
         static private class Day {
