@@ -7,3 +7,10 @@ the free [WeatherAPI](https://www.weatherapi.com/) as the information source and
 a console version; it doesn't include the JavaFX GUI that the general RainyDay Application has. However, it does have
 all the same functionality for data retrieval:
 
+![program_start.png](pictures/program_start.png)
+
+## Features
+### Current Weather
+### Forecasted Weather
+### Astronomy
+### Searching Weather Database
