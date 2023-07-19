@@ -30,23 +30,34 @@ public class Main {
         Scanner inputScanner = new Scanner(System.in);
         Connection connection = new Connection();
 
-        do {
+        while(true) {
             System.out.print("> ");
             command = inputScanner.nextLine().split(" ");
 
             try{
                 if (command[0].equalsIgnoreCase("CURRENT")){
+                    System.out.println("Getting current weather for " + command[1] + "...");
                     connection.getCurrentWeather(command[1]);
                 }else if (command[0].equalsIgnoreCase("FORECAST")){
+                    System.out.println("Getting forecast for " + command[1] + "...");
                     connection.getForecast(command[1], Integer.parseInt(command[2]));
                 }else if (command[0].equalsIgnoreCase("ASTRONOMY")){
+                    System.out.println("Getting astronomy for " + command[1] + "...");
                     connection.getAstronomy(command[1], command[2]);
                 }else if (command[0].equalsIgnoreCase("SEARCH")){
+                    System.out.println("Searching for " + command[1] + "...");
                     connection.getAutocompleteTerm(command[1]);
+                }else if (command[0].equalsIgnoreCase("EXIT")){
+                    System.out.println("Exiting program...");
+                    break;
+                }else{
+                    System.out.println("Please enter a correct command.");
                 }
+            }catch (ArrayIndexOutOfBoundsException e){
+                System.out.println("ERROR: Please make sure you have entered all arguments for a command.");
             }catch (Exception e){
                 e.printStackTrace();
             }
-        }while (!(command[0].equalsIgnoreCase("EXIT")));
+        }
     }
 }
