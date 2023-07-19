@@ -24,10 +24,10 @@ public class Connection {
 
     private final HttpClient client = HttpClient.newHttpClient();
 
-    Weather getCurrentWeather(String _q, String _airQuality) {
+    Weather getCurrentWeather(String _q) {
         // the url to get the information from
         String url = "https://api.weatherapi.com/v1/current.json?key=" + API_KEY
-                + "&q=" + _q + "&aqi=" + _airQuality;
+                + "&q=" + _q + "&aqi=yes";
 
         // create a GET http request
         HttpRequest currentWeatherRequest = HttpRequest.newBuilder().uri(URI.create(url)).build();
@@ -78,9 +78,9 @@ public class Connection {
         return result;
     }
 
-    Weather getForecast(String _q, int _days, String _aqi, String _alerts){
+    Weather getForecast(String _q, int _days){
         String url = "https://api.weatherapi.com/v1/forecast.json?key=" + API_KEY
-                + "&q=" + _q + "&days=" + _days + "&aqi=" + _aqi + "&alerts=" + _alerts;
+                + "&q=" + _q + "&days=" + _days + "&aqi=yes" + "&alerts=yes";
 
         HttpRequest forecastRequest = HttpRequest.newBuilder().uri(URI.create(url)).build();
 
