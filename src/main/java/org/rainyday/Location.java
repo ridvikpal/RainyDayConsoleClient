@@ -1,12 +1,7 @@
 package org.rainyday;
 
-import java.util.Date;
-import java.util.StringJoiner;
-
 public class Location{
-    private String name, region, country, tz_id;
-
-    Date localtime;
+    private String name, region, country, tz_id, localtime;
 
     private double lat, lon;
 
@@ -29,7 +24,7 @@ public class Location{
         return tz_id;
     }
 
-    public Date getLocaltime() {
+    public String getLocaltime() {
         return localtime;
     }
 

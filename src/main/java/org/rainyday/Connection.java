@@ -12,7 +12,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Date;
 
 /* MAIN CLASS DECLARATION */
 public class Connection {
@@ -38,7 +37,7 @@ public class Connection {
                     HttpResponse.BodyHandlers.ofString());
 
             // capture the result from GSON and put it into a Weather
-            result = new GsonBuilder().registerTypeAdapter(Date.class, new DateTimeDeserializer()).create()
+            result = new GsonBuilder().create()
                     .fromJson(currentWeatherResponse.body(), Weather.class);
         }catch (Exception e){
             e.printStackTrace();
@@ -61,7 +60,7 @@ public class Connection {
             HttpResponse<String> astronomyResponse = client.send(astronomyRequest,
                     HttpResponse.BodyHandlers.ofString());
 
-            result = new GsonBuilder().registerTypeAdapter(Date.class, new DateTimeDeserializer()).create()
+            result = new GsonBuilder().create()
                     .fromJson(astronomyResponse.body(), Weather.class);
         }catch (Exception e){
             e.printStackTrace();
@@ -83,7 +82,7 @@ public class Connection {
             HttpResponse<String> forecastResponse = client.send(forecastRequest,
                     HttpResponse.BodyHandlers.ofString());
 
-            result = new GsonBuilder().registerTypeAdapter(Date.class, new DateTimeDeserializer()).create()
+            result = new GsonBuilder().create()
                     .fromJson(forecastResponse.body(), Weather.class);
         }catch (Exception e){
             e.printStackTrace();
