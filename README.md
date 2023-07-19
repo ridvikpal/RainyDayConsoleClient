@@ -15,7 +15,7 @@ All the features and their associated commands are shown upon application startu
 commands are case-insensitive. This means that `forecast` is the same as `FORECAST`, similar to SQL commands.
 Note that whenever a location is required for a command, it can be provided in the following forms:
 
-<div style="text-align: center;">
+<div align="center">
 
 | Type               | Example                |
 |--------------------|------------------------|
