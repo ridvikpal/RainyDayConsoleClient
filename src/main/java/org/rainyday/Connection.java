@@ -7,11 +7,14 @@ package org.rainyday;
 
 /* IMPORT LIBRARIES */
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 
 /* MAIN CLASS DECLARATION */
 public class Connection {
@@ -91,8 +94,26 @@ public class Connection {
         return result;
     }
 
-    Weather getAutocompleteTerm(){
-        Weather result = null;
+    ArrayList<AutoCompleteElement> getAutocompleteTerm(String _query){
+        String url = "https://api.weatherapi.com/v1/search.json?key=" + API_KEY
+                + "&q=" + _query;
+
+        HttpRequest autocompleteRequest = HttpRequest.newBuilder().uri(URI.create(url)).build();
+
+        ArrayList<AutoCompleteElement> result;
+
+        try {
+            HttpResponse<String> autocompleteResponse = client.send(autocompleteRequest,
+                    HttpResponse.BodyHandlers.ofString());
+
+            Type autocompleteType = new TypeToken<ArrayList<AutoCompleteElement>>(){}.getType();
+            result = new GsonBuilder().create()
+                    .fromJson(autocompleteResponse.body(), autocompleteType);
+        }catch (Exception e){
+            e.printStackTrace();
+            result = null;
+        }
+
 
         return result;
     }
