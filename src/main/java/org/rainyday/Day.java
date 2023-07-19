@@ -74,4 +74,27 @@ public class Day {
     public AirQuality getAir_quality() {
         return air_quality;
     }
+
+    @Override
+    public String toString() {
+        return "Day{" +
+                "maxtemp_c=" + maxtemp_c +
+                ", maxtemp_f=" + maxtemp_f +
+                ", mintemp_c=" + mintemp_c +
+                ", mintemp_f=" + mintemp_f +
+                ", avgtemp_c=" + avgtemp_c +
+                ", avgtemp_f=" + avgtemp_f +
+                ", maxwind_mph=" + maxwind_mph +
+                ", maxwind_kph=" + maxwind_kph +
+                ", totalprecip_mm=" + totalprecip_mm +
+                ", totalprecip_in=" + totalprecip_in +
+                ", totalsnow_cm=" + totalsnow_cm +
+                ", avgvis_km=" + avgvis_km +
+                ", avgvis_miles=" + avgvis_miles +
+                ", avghumidity=" + avghumidity +
+                ", uv=" + uv +
+                ", condition=" + condition +
+                ", air_quality=" + air_quality +
+                '}';
+    }
 }

@@ -145,4 +145,44 @@ public class Hour {
     public AirQuality getAir_quality() {
         return air_quality;
     }
+
+    @Override
+    public String toString() {
+        return "Hour{" +
+                "time_epoch=" + time_epoch +
+                ", is_day=" + is_day +
+                ", wind_degree=" + wind_degree +
+                ", humidity=" + humidity +
+                ", cloud=" + cloud +
+                ", will_it_rain=" + will_it_rain +
+                ", chance_of_rain=" + chance_of_rain +
+                ", will_it_snow=" + will_it_snow +
+                ", chance_of_snow=" + chance_of_snow +
+                ", time='" + time + '\'' +
+                ", wind_dir='" + wind_dir + '\'' +
+                ", temp_c=" + temp_c +
+                ", temp_f=" + temp_f +
+                ", wind_mph=" + wind_mph +
+                ", wind_kph=" + wind_kph +
+                ", pressure_mb=" + pressure_mb +
+                ", pressure_in=" + pressure_in +
+                ", precip_mm=" + precip_mm +
+                ", precip_in=" + precip_in +
+                ", feelslike_c=" + feelslike_c +
+                ", feelslike_f=" + feelslike_f +
+                ", windchill_c=" + windchill_c +
+                ", windchill_f=" + windchill_f +
+                ", heatindex_c=" + heatindex_c +
+                ", heatindex_f=" + heatindex_f +
+                ", dewpoint_c=" + dewpoint_c +
+                ", dewpoint_f=" + dewpoint_f +
+                ", vis_km=" + vis_km +
+                ", vis_miles=" + vis_miles +
+                ", gust_mph=" + gust_mph +
+                ", gust_kph=" + gust_kph +
+                ", uv=" + uv +
+                ", condition=" + condition +
+                ", air_quality=" + air_quality +
+                '}';
+    }
 }

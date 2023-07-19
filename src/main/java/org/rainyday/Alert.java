@@ -1,7 +1,6 @@
 package org.rainyday;
 
 import java.util.ArrayList;
-import java.util.StringJoiner;
 
 public class Alert {
     ArrayList<AlertSubClass> alert;
@@ -60,5 +59,31 @@ public class Alert {
         public String getInstruction() {
             return instruction;
         }
+
+        @Override
+        public String toString() {
+            return "AlertSubClass{" +
+                    "headline='" + headline + '\'' +
+                    ", msgtype='" + msgtype + '\'' +
+                    ", severity='" + severity + '\'' +
+                    ", urgency='" + urgency + '\'' +
+                    ", areas='" + areas + '\'' +
+                    ", category='" + category + '\'' +
+                    ", certainty='" + certainty + '\'' +
+                    ", event='" + event + '\'' +
+                    ", note='" + note + '\'' +
+                    ", effective='" + effective + '\'' +
+                    ", expires='" + expires + '\'' +
+                    ", desc='" + desc + '\'' +
+                    ", instruction='" + instruction + '\'' +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Alert{" +
+                "alert=" + alert +
+                '}';
     }
 }

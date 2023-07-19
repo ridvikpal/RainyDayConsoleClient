@@ -42,4 +42,18 @@ public class AirQuality{
     public int getGb_defra_index() {
         return gb_defra_index;
     }
+
+    @Override
+    public String toString() {
+        return "AirQuality{" +
+                "co=" + co +
+                ", no2=" + no2 +
+                ", o3=" + o3 +
+                ", so2=" + so2 +
+                ", pm2_5=" + pm2_5 +
+                ", pm10=" + pm10 +
+                ", us_epa_index=" + us_epa_index +
+                ", gb_defra_index=" + gb_defra_index +
+                '}';
+    }
 }

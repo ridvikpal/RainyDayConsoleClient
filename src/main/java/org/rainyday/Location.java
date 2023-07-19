@@ -40,4 +40,17 @@ public class Location{
         return localtime_epoch;
     }
 
+    @Override
+    public String toString() {
+        return "Location{" +
+                "name='" + name + '\'' +
+                ", region='" + region + '\'' +
+                ", country='" + country + '\'' +
+                ", tz_id='" + tz_id + '\'' +
+                ", localtime='" + localtime + '\'' +
+                ", lat=" + lat +
+                ", lon=" + lon +
+                ", localtime_epoch=" + localtime_epoch +
+                '}';
+    }
 }

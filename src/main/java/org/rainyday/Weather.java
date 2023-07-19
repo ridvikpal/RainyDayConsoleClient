@@ -2,8 +2,6 @@ package org.rainyday;
 
 /* IMPORT CLASSES */
 
-import java.util.StringJoiner;
-
 public class Weather {
     private Location location;
     private Current current;
@@ -26,5 +24,16 @@ public class Weather {
 
     public Alert getAlerts() {
         return alerts;
+    }
+
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "location=" + location +
+                ", current=" + current +
+                ", forecast=" + forecast +
+                ", astronomy=" + astronomy +
+                ", alerts=" + alerts +
+                '}';
     }
 }

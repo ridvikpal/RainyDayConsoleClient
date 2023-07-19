@@ -1,7 +1,5 @@
 package org.rainyday;
 
-import java.util.StringJoiner;
-
 public class Astro {
     private String sunrise, sunset, moonrise, moonset;
     private String  moon_phase;
@@ -37,5 +35,19 @@ public class Astro {
 
     public int getIs_sun_up() {
         return is_sun_up;
+    }
+
+    @Override
+    public String toString() {
+        return "Astro{" +
+                "sunrise='" + sunrise + '\'' +
+                ", sunset='" + sunset + '\'' +
+                ", moonrise='" + moonrise + '\'' +
+                ", moonset='" + moonset + '\'' +
+                ", moon_phase='" + moon_phase + '\'' +
+                ", moon_illumination=" + moon_illumination +
+                ", is_moon_up=" + is_moon_up +
+                ", is_sun_up=" + is_sun_up +
+                '}';
     }
 }

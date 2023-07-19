@@ -6,6 +6,7 @@ package org.rainyday;
 * */
 
 /* IMPORT LIBRARIES */
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
@@ -39,9 +40,11 @@ public class Connection {
             HttpResponse<String> currentWeatherResponse = client.send(currentWeatherRequest,
                     HttpResponse.BodyHandlers.ofString());
 
-            // capture the result from GSON and put it into a Weather
-            result = new GsonBuilder().create()
-                    .fromJson(currentWeatherResponse.body(), Weather.class);
+            // capture the result from GSON
+            Gson gsonObject = new GsonBuilder().setPrettyPrinting().create();
+            result = gsonObject.fromJson(currentWeatherResponse.body(), Weather.class);
+
+            System.out.println(gsonObject.toJson(result));
         }catch (Exception e){
             e.printStackTrace();
 
@@ -63,8 +66,10 @@ public class Connection {
             HttpResponse<String> astronomyResponse = client.send(astronomyRequest,
                     HttpResponse.BodyHandlers.ofString());
 
-            result = new GsonBuilder().create()
-                    .fromJson(astronomyResponse.body(), Weather.class);
+            Gson gsonObject = new GsonBuilder().setPrettyPrinting().create();
+            result = gsonObject.fromJson(astronomyResponse.body(), Weather.class);
+
+            System.out.println(gsonObject.toJson(result));
         }catch (Exception e){
             e.printStackTrace();
             result = null;
@@ -85,8 +90,10 @@ public class Connection {
             HttpResponse<String> forecastResponse = client.send(forecastRequest,
                     HttpResponse.BodyHandlers.ofString());
 
-            result = new GsonBuilder().create()
-                    .fromJson(forecastResponse.body(), Weather.class);
+            Gson gsonObject = new GsonBuilder().setPrettyPrinting().create();
+            result = gsonObject.fromJson(forecastResponse.body(), Weather.class);
+
+            System.out.println(gsonObject.toJson(result));
         }catch (Exception e){
             e.printStackTrace();
             result = null;
@@ -107,8 +114,10 @@ public class Connection {
                     HttpResponse.BodyHandlers.ofString());
 
             Type autocompleteType = new TypeToken<ArrayList<AutoCompleteElement>>(){}.getType();
-            result = new GsonBuilder().create()
-                    .fromJson(autocompleteResponse.body(), autocompleteType);
+            Gson gsonObject = new GsonBuilder().setPrettyPrinting().create();
+            result = gsonObject.fromJson(autocompleteResponse.body(), autocompleteType);
+
+            System.out.println(gsonObject.toJson(result));
         }catch (Exception e){
             e.printStackTrace();
             result = null;

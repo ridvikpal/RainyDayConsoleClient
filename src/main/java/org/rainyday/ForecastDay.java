@@ -8,4 +8,15 @@ public class ForecastDay {
     private Astro astro;
     private Day day;
     ArrayList<Hour> hour;
+
+    @Override
+    public String toString() {
+        return "ForecastDay{" +
+                "date='" + date + '\'' +
+                ", date_epoch=" + date_epoch +
+                ", astro=" + astro +
+                ", day=" + day +
+                ", hour=" + hour +
+                '}';
+    }
 }

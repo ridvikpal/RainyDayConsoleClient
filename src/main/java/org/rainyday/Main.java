@@ -1,7 +1,5 @@
 package org.rainyday;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args){
         // create a connection object to establish connection with API
@@ -9,10 +7,11 @@ public class Main {
 
 //        Weather test = connectionObject.getCurrentWeather("Jacksonville", "yes");
 //        Weather test = connectionObject.getAstronomy("Toronto", "2023-07-13");
-//        Weather test = connectionObject.getForecast("Toronto", 1, "yes", "yes");
-        ArrayList<AutoCompleteElement> test = connectionObject.getAutocompleteTerm("Tor");
+        Weather test = connectionObject.getForecast("Toronto", 1, "yes", "yes");
+//        System.out.println(test);
 
-        test.forEach((x) -> System.out.println(x));
+//        ArrayList<AutoCompleteElement> test = connectionObject.getAutocompleteTerm("Lon");
+//        test.forEach(System.out::println);
 
         System.out.println("Done");
     }

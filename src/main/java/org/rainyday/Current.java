@@ -108,4 +108,34 @@ public class Current{
     public AirQuality getAir_quality() {
         return air_quality;
     }
+
+    @Override
+    public String toString() {
+        return "Current{" +
+                "temp_c=" + temp_c +
+                ", temp_f=" + temp_f +
+                ", wind_mph=" + wind_mph +
+                ", wind_kph=" + wind_kph +
+                ", pressure_mb=" + pressure_mb +
+                ", pressure_in=" + pressure_in +
+                ", feelslike_c=" + feelslike_c +
+                ", feelslike_f=" + feelslike_f +
+                ", vis_km=" + vis_km +
+                ", vis_miles=" + vis_miles +
+                ", uv=" + uv +
+                ", precip_mm=" + precip_mm +
+                ", precip_in=" + precip_in +
+                ", gust_mph=" + gust_mph +
+                ", gust_kph=" + gust_kph +
+                ", is_day=" + is_day +
+                ", last_updated_epoch=" + last_updated_epoch +
+                ", wind_degree=" + wind_degree +
+                ", humidity=" + humidity +
+                ", cloud=" + cloud +
+                ", wind_dir='" + wind_dir + '\'' +
+                ", last_updated='" + last_updated + '\'' +
+                ", condition=" + condition +
+                ", air_quality=" + air_quality +
+                '}';
+    }
 }

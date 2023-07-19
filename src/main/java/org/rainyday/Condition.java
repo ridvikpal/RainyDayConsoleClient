@@ -16,4 +16,13 @@ public class Condition{
     public int getCode() {
         return code;
     }
+
+    @Override
+    public String toString() {
+        return "Condition{" +
+                "text='" + text + '\'' +
+                ", icon='" + icon + '\'' +
+                ", code=" + code +
+                '}';
+    }
 }
