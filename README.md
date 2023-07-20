@@ -1,5 +1,17 @@
 # RainyDay (Console Client)
 
+<!-- TOC -->
+* [RainyDay (Console Client)](#rainyday-console-client)
+  * [Introduction](#introduction)
+  * [Features](#features)
+    * [Current Weather](#current-weather)
+    * [Forecasted Weather](#forecasted-weather)
+    * [Astronomy](#astronomy)
+    * [Searching Weather Database](#searching-weather-database)
+  * [Data Organization](#data-organization)
+    * [Organization Diagram](#organization-diagram)
+<!-- TOC -->
+
 ## Introduction
 RainyDay is a simple weather application that provides complete weather information built in Java. It utilizes
 the free RESTful [WeatherAPI](https://www.weatherapi.com/) as the information source and utilizes the
