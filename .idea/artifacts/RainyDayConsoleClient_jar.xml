@@ -1,11 +1,11 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="RainyDayConsoleVersion:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/RainyDayConsoleVersion_jar</output-path>
-    <root id="archive" name="RainyDayConsoleVersion.jar">
+  <artifact type="jar" name="RainyDayConsoleClient:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RainyDayConsoleClient_jar</output-path>
+    <root id="archive" name="RainyDayConsoleClient.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
       </element>
-      <element id="module-output" name="RainyDayConsoleVersion" />
+      <element id="module-output" name="RainyDayConsoleClient" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar" path-in-jar="/" />
     </root>
   </artifact>
