@@ -66,7 +66,8 @@ to get the astronomy for.
 
 ### Searching Weather Database
 The WeatherAPI database can be searched for using the `SEARCH` command. This command is useful to figure out the
-complete name for the location you want to get information for:
+complete name for the location you want to get information for. It takes in a partial location term (see above
+for definition of a location term):
 
 ![search.png](pictures/search.png)
 
