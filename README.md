@@ -62,20 +62,20 @@ complete name for the location you want to get information for:
 As mentioned, the data from WeatherAPI is deserialized into various classes, and these classes are modular and portable 
 such that they can be used in any application for weather data. These classes are:
 
-| Class | Description | Parent Classes     |
-| ----- | ----------- |--------------------|
-| `Weather` | Stores all weather information from the API | None               |
-| `Location` | Stores location information | `Weather`            |
-| `Current` | Stores all current weather information | `Weather`            |
-| `Forecast` | Stores all forecasted weather information | `Weather`            |
-| `Alert` | Stores all emergency weather alerts | `Weather`            |
-| `Astronomy` | Stores all weather astronomy information | `Weather`            |
-| `Condition` | Stores the current weather condition information | `Current`, `Hour`, `Day` |
-| `AirQuality` | Stores the air quality information | `Current`, `Hour`, `Day` |
-| `ForecastDay` | Stores the forecast for a specific day | `Forecast`           |
-| `Hour` | Stores the weather for particular hour in the forecast | `ForecastDay`        |
-| `Day` | Stores the weather for a particular day | `ForecastDay`        |
-| `Astro` | Stores the weather astronomy | `Astronomy`, `ForecastDay` |
+| Class         | Description                                            | Parent Classes             |
+|---------------|--------------------------------------------------------|----------------------------|
+| `Weather`     | Stores all weather information from the API            | None                       |
+| `Location`    | Stores location information                            | `Weather`                  |
+| `Current`     | Stores all current weather information                 | `Weather`                  |
+| `Forecast`    | Stores all forecasted weather information              | `Weather`                  |
+| `Alert`       | Stores all emergency weather alerts                    | `Weather`                  |
+| `Astronomy`   | Stores all weather astronomy information               | `Weather`                  |
+| `Condition`   | Stores the current weather condition information       | `Current`, `Hour`, `Day`   |
+| `AirQuality`  | Stores the air quality information                     | `Current`, `Hour`, `Day`   |
+| `ForecastDay` | Stores the forecast for a specific day                 | `Forecast`                 |
+| `Hour`        | Stores the weather for particular hour in the forecast | `ForecastDay`              |
+| `Day`         | Stores the weather for a particular day                | `ForecastDay`              |
+| `Astro`       | Stores the weather astronomy                           | `Astronomy`, `ForecastDay` |
 
 ### Organization Diagram
 This can be better represented in the following diagram:
