@@ -1,10 +1,10 @@
-# RainyDay (Console Version)
+# RainyDay (Console Client)
 
 ## Introduction
 RainyDay is a simple weather application that provides complete weather information built in Java. It utilizes
 the free [WeatherAPI](https://www.weatherapi.com/) as the information source and utilizes the
 [gson](https://github.com/google/gson) library for JSON serialization and deserialization. This version is purely
-a console version; it doesn't include the JavaFX GUI that the general RainyDay Application has. However, it does have
+a console client; it doesn't include the JavaFX GUI that the general RainyDay Application has. However, it does have
 all the same functionality for data retrieval:
 
 ![program_start.png](pictures/program_start.png)
@@ -63,6 +63,8 @@ As mentioned, the data from WeatherAPI is deserialized into various classes, and
 portable such that they can be used in any application for weather data. These classes are organized into levels as a 
 hierarchy. These classes are:
 
+<div align="center">
+
 | Class                 | Description                                            | Level | Parent Classes             |
 |-----------------------|--------------------------------------------------------|-------|----------------------------|
 | `Weather`             | Stores all weather information from the API            | 1     | None                       |
@@ -79,6 +81,8 @@ hierarchy. These classes are:
 | `AirQuality`          | Stores the air quality information                     | 3     | `Current`, `Hour`, `Day`   |
 | `Hour`                | Stores the weather for particular hour in the forecast | 3     | `ForecastDay`              |
 | `Day`                 | Stores the weather for a particular day                | 3     | `ForecastDay`              |
+
+</div>
 
 ### Organization Diagram
 The classes can be better represented in the following diagram:
