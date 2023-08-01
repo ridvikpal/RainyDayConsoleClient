@@ -1,7 +1,7 @@
-# RainyDay (Console Client)
+# RainyDay (Console Client/API)
 
 <!-- TOC -->
-* [RainyDay (Console Client)](#rainyday-console-client)
+* [RainyDay (Console Client/API)](#rainyday-console-clientapi)
   * [Introduction](#introduction)
   * [Features](#features)
     * [Current Weather](#current-weather)
@@ -10,14 +10,19 @@
     * [Searching Weather Database](#searching-weather-database)
   * [Data Organization](#data-organization)
     * [Organization Diagram](#organization-diagram)
+  * [Using The API In Your Own Code](#using-the-api-in-your-own-code)
+    * [Current Weather Via API](#current-weather-via-api)
+    * [Forcasted Weather Via API](#forcasted-weather-via-api)
+    * [Astronomy Via API](#astronomy-via-api)
+    * [Location Search Via API](#location-search-via-api)
 <!-- TOC -->
 
 ## Introduction
 RainyDay is a simple weather application that provides complete weather information built in Java. It utilizes
-the free RESTful [WeatherAPI](https://www.weatherapi.com/) as the information source and utilizes the
-[gson](https://github.com/google/gson) library for JSON serialization and deserialization. This version is purely
-a console client; it doesn't include the JavaFX GUI that the general RainyDay Application has. This version
-is essentially a barebones higher level API built off of WeatherAPI that allows for weather data retrieval easily:
+the free RESTful [WeatherAPI](https://www.weatherapi.com/) as the information source and utilizes the [gson](https://github.com/google/gson) library for JSON 
+serialization and deserialization. This version is purely a console client; it doesn't include the JavaFX GUI that 
+the general RainyDay Application has. This version is essentially a fully-functional higher level API built off of 
+WeatherAPI that allows for seamless weather data retrieval in Java:
 
 ![program_start.png](pictures/program_start.png)
 
@@ -102,3 +107,63 @@ The classes can be better represented in the following diagram:
 
 ![class_organization](pictures/class_organization.jpg)
 
+## Using The API In Your Own Code
+Really, the code in this console client can be used as a higher level API for any weather data you may want for your
+own developed application. All the data is nicely organized in the class structure above, so it should be really easy
+for you to implement in your own applications. First, simply create a `Connection` object (from package `org.rainyday`), 
+which will allow you to use the various features RainyDay has to offer via its methods:
+
+```java
+private static Connection rainyDayAPIConnection = new Connection();
+```
+
+Then, you can call the corresponding API method you would like for the corresponding feature, and use the getter
+methods on the returned object to get the data you would like.
+
+### Current Weather Via API
+To get the current weather, simply use the `getCurrentWeather()` method. This method takes in a location and 
+will return a `Weather` object with the data:
+
+```java
+// get the current weather for Toronto, Ontario, Canada
+private Weather currentWeather = rainyDayAPIConnection.getCurrentWeather("Toronto");
+
+// For example, get the current temperature in degrees celsius
+double currentTemp = currentWeather.getCurrent().getTemp_c();
+```
+
+### Forcasted Weather Via API
+To get the current weather _and_ the forecasted weather, use the `getForecast()` method. This method takes in a 
+location and the # of days forward you want to get the data for, ranging from 1-3, and returns a `Weather` object:
+
+```java
+// get the forecasted weather for Toronto, Ontario, Canada for 3 days
+private Weather forecastedWeather = rainyDayAPIConnection.getForecastedWeather("Toronto", 3);
+
+// get the current temperature at 10:00 AM for tomorrow
+double futureTemp = forecastedWeather.getForecast().getForecastday().get(1).getHour().get(10).getTemp_c();
+```
+
+### Astronomy Via API
+To get the weather astronomy for a location, use the `getAstronomy()` method. This method takes in a location and a 
+date, to return a weather object. Note by default astronomy data is included in the `getForecast()` API call as well:
+
+```java
+// get the weather astronomy for Toronto, Ontario, Canada on July 21, 2023
+private Weather astronomyData = rainyDayAPIConnection.getAstronomy("Toronto", "2023-07-21");
+
+// get the sunrise time for 2023-07-21
+private String sunriseTime = astronomyData.getAstronomy().getAstro().getSunrise();
+```
+
+### Location Search Via API
+To search the WeatherAPI database for a specific location, use the `getAutocompleteTerm()` method. This method takes in
+a keyword and returns an `ArrayList<AutoCompleteElement>` with all the matched locations.
+
+```java
+// search with the keyword "Jacks"
+private ArrayList<AutoCompleteElement> matchedLocations = rainyDayAPIConnection.getAutoCompleteTerm("Jacks");
+
+// get the first matched term
+matchedLocations.get(0).getName();
+```

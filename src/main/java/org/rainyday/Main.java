@@ -3,7 +3,7 @@ package org.rainyday;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
         System.out.println("***RAINYDAY CONSOLE VERSION***\n");
         System.out.println("Commands are as follows:\n");
         System.out.println("CURRENT %city name, postal code, ip address, or longitude/latitude%");
