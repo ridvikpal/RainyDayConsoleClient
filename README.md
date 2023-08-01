@@ -16,8 +16,8 @@
 RainyDay is a simple weather application that provides complete weather information built in Java. It utilizes
 the free RESTful [WeatherAPI](https://www.weatherapi.com/) as the information source and utilizes the
 [gson](https://github.com/google/gson) library for JSON serialization and deserialization. This version is purely
-a console client; it doesn't include the JavaFX GUI that the general RainyDay Application has. However, it does have
-all the same functionality for data retrieval:
+a console client; it doesn't include the JavaFX GUI that the general RainyDay Application has. This version
+is essentially a barebones higher level API built off of WeatherAPI that allows for weather data retrieval easily:
 
 ![program_start.png](pictures/program_start.png)
 
