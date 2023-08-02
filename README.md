@@ -1,4 +1,8 @@
 # RainyDay (Console Client/API)
+![RainyDay_Logo.png](pictures/RainyDay_Logo.png)
+The logo contains an icon from [www.flaticon.com](https://www.flaticon.com/).
+
+<a href="https://www.flaticon.com/free-icons/rain" title="rain icons">Rain icons created by Freepik - Flaticon</a>
 
 <!-- TOC -->
 * [RainyDay (Console Client/API)](#rainyday-console-clientapi)
